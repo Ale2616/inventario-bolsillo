@@ -979,3 +979,60 @@ input:checked + .slider:before {
         grid-column: span 2;
     }
 }
+
+/* ==========================================
+   PARCHE DE OPTIMIZACIÓN PARA CELULARES (UX)
+   ========================================== */
+@media (max-width: 768px) {
+    /* Evitar desbordes laterales */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+    }
+
+    /* Navbar adaptable y fluida */
+    nav, .navbar, header, [class*="nav"] {
+        padding: 10px 12px !important;
+        gap: 6px !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    /* Reducir tamaño de textos en el Navbar */
+    nav *, .navbar *, header * {
+        font-size: 12px !important;
+    }
+
+    /* Ajustar títulos masivos del Hero */
+    h1 {
+        font-size: 26px !important;
+        line-height: 1.2 !important;
+        letter-spacing: -0.5px !important;
+        margin-top: 20px !important;
+    }
+
+    h2 {
+        font-size: 20px !important;
+    }
+
+    /* Ajustar párrafos descriptivos */
+    p {
+        font-size: 14px !important;
+        line-height: 1.4 !important;
+    }
+
+    /* Forzar a que el Bento Grid de 12 tarjetas sea de 1 sola columna vertical */
+    .grid, .bento-grid, [class*="grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        padding: 12px !important;
+    }
+
+    /* Ajustar imágenes, contenedores y mockups */
+    .card, .mockup, img, video {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+}
