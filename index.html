@@ -3,431 +3,342 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Inventario de Bolsillo - La solución de gestión de stock más sofisticada y sencilla para empresas y emprendedores. Precisión quirúrgica en tu bolsillo.">
-    <meta name="keywords" content="inventario, control de stock, gestion de inventarios, qr scan, app codigo de barras, minimalista, apple design, saas">
-    <meta name="author" content="Inventario de Bolsillo">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Inventario de Bolsillo - Control Absoluto, Estética Impecable">
-    <meta property="og:description" content="La gestión de stock reinventada para la era móvil. Controla tus productos en tiempo real.">
-    <meta property="og:image" content="assets/scanning_mockup.png">
+    <meta name="description" content="Bolsillo - Sistema de gestión de inventarios multiplataforma (.exe y .apk) de alto rendimiento. Control absoluto, multi-bodega y sincronización en tiempo real.">
+    <meta name="keywords" content="bolsillo pro, inventario corporativo, apk android, exe windows, erp, bento grid, light dark mode, supabase, sqlite">
+    <meta name="author" content="Bolsillo Pro">
 
-    <title>Inventario de Bolsillo | Control de Stock Minimalista & Premium</title>
+    <title>Bolsillo | Control de Stock Multiplataforma Corporativo</title>
 
-    <!-- Google Fonts: Outfit (Headings) & Inter (Body) -->
+    <!-- Google Fonts: Poppins (Titles) & Inter (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- FontAwesome v6.4.0 (for Duotone & solid icons) -->
+    <!-- FontAwesome v6.4.0 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- Modular Stylesheet Link -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
     <!-- STICKY NAVBAR -->
     <header class="navbar">
-        <div class="navbar-container">
+        <div class="container navbar-container">
             <a href="#" class="logo">
-                <div class="logo-box">
-                    <i class="fa-solid fa-box-archive"></i>
-                </div>
-                <span>Inventario<span>Bolsillo</span></span>
+                <!-- SVG Minimalist 'B' Logo -->
+                <svg class="logo-svg" viewBox="0 0 100 100" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#38bdf8" />
+                            <stop offset="100%" stop-color="#0284c7" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="15" y="15" width="70" height="70" rx="18" fill="none" stroke="url(#logoGrad)" stroke-width="8" />
+                    <path d="M 42 35 L 56 35 C 61 35 61 44 56 44 L 42 44" fill="none" stroke="url(#logoGrad)" stroke-width="8" stroke-linecap="round" />
+                    <path d="M 42 44 L 60 44 C 65 44 65 55 60 55 L 42 55" fill="none" stroke="url(#logoGrad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+                    <line x1="42" y1="35" x2="42" y2="62" stroke="url(#logoGrad)" stroke-width="8" stroke-linecap="round" />
+                </svg>
+                <span>Bolsillo<span>Pro</span></span>
             </a>
             
-            <nav class="nav-links-desktop">
-                <a href="#inicio" class="nav-item active">Inicio</a>
-                <a href="#funcionalidades" class="nav-item">Características</a>
-                <a href="#escanear" class="nav-item">Escáner</a>
-                <a href="#precios" class="nav-item">Planes</a>
-            </nav>
+            <div class="navbar-right">
+                <nav class="nav-links">
+                    <a href="#beneficios" class="nav-item">Beneficios</a>
+                    <a href="#seguridad" class="nav-item">Seguridad</a>
+                    <a href="#descargas" class="nav-item">Descargas</a>
+                </nav>
 
-            <a href="#precios" class="btn btn-primary nav-cta">Comenzar Pro</a>
+                <div class="navbar-actions">
+                    <!-- Light/Dark Mode Switcher -->
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkboxTheme">
+                            <input type="checkbox" id="checkboxTheme" />
+                            <div class="slider">
+                                <i class="fa-solid fa-moon"></i>
+                                <i class="fa-solid fa-sun"></i>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- Auth buttons -->
+                    <button class="btn-text-link auth-trigger" data-tab="login">Iniciar Sesión</button>
+                    <button class="btn btn-secondary auth-trigger" data-tab="register" style="padding: 8px 16px; font-size: 0.8rem; border-radius: 8px;">Registrarse</button>
+                </div>
+            </div>
         </div>
     </header>
 
     <main>
         <!-- HERO SECTION -->
-        <section id="inicio" class="hero-section">
-            <div class="hero-glow-1"></div>
-            <div class="hero-glow-2"></div>
-            
+        <section id="inicio" class="hero">
+            <div class="hero-glow"></div>
             <div class="container hero-container">
-                <div class="hero-content reveal slide-up">
-                    <span class="pill-badge">
-                        <i class="fa-solid fa-sparkles"></i> Diseñado al estilo Apple
-                    </span>
-                    <h1>Inventario de Bolsillo:<br><span>Control Absoluto</span>,<br>Estética Impecable.</h1>
-                    <p>La gestión de stock reinventada para la era móvil. Precisión quirúrgica en la palma de tu mano para empresas, almacenes y emprendedores que valoran la simplicidad refinada.</p>
-                    
-                    <div class="hero-ctas">
-                        <a href="#" class="btn-store btn-apple" aria-label="Descargar en App Store">
-                            <i class="fa-brands fa-apple store-icon"></i>
-                            <div class="store-text">
-                                <span>Descargar en el</span>
-                                <strong>App Store</strong>
-                            </div>
-                        </a>
-                        <a href="#" class="btn-store btn-google" aria-label="Descargar en Google Play">
-                            <i class="fa-brands fa-google-play store-icon"></i>
-                            <div class="store-text">
-                                <span>Disponible en</span>
-                                <strong>Google Play</strong>
-                            </div>
-                        </a>
-                    </div>
+                <div class="hero-badge">
+                    <i class="fa-solid fa-cube"></i> Logística Corporativa Estable
                 </div>
-
-                <div class="hero-visual reveal slide-up delay-2">
-                    <div class="phone-frame-wrapper">
-                        <!-- CSS iPhone Mockup -->
-                        <div class="iphone-mockup">
-                            <div class="dynamic-island"></div>
-                            <div class="iphone-screen">
-                                <!-- Status info -->
-                                <div class="screen-header-bar">
-                                    <span class="time">09:41</span>
-                                    <div class="status-icons">
-                                        <i class="fa-solid fa-signal"></i>
-                                        <i class="fa-solid fa-wifi"></i>
-                                        <i class="fa-solid fa-battery-three-quarters"></i>
-                                    </div>
-                                </div>
-
-                                <!-- App Shell inside screen -->
-                                <div class="app-shell">
-                                    <div class="app-header">
-                                        <div>
-                                            <span class="app-subtitle">Almacén Principal</span>
-                                            <h2>Mi Stock</h2>
-                                        </div>
-                                        <div class="app-profile-pic">
-                                            <i class="fa-solid fa-user-tie"></i>
-                                        </div>
-                                    </div>
-
-                                    <!-- Quick Stats Grid inside Phone -->
-                                    <div class="phone-stats">
-                                        <div class="phone-stat-card">
-                                            <span>Productos</span>
-                                            <strong>1,248</strong>
-                                        </div>
-                                        <div class="phone-stat-card">
-                                            <span>Valor Total</span>
-                                            <strong>$48,920</strong>
-                                        </div>
-                                    </div>
-
-                                    <!-- Search Bar -->
-                                    <div class="phone-search">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                        <input type="text" placeholder="Buscar producto..." disabled>
-                                    </div>
-
-                                    <!-- Stock List -->
-                                    <div class="phone-stock-list">
-                                        <div class="stock-list-header">
-                                            <span>Ítem</span>
-                                            <span>Disponibilidad</span>
-                                        </div>
-                                        <div class="stock-item-row">
-                                            <div class="item-info">
-                                                <strong class="item-name">AURORA Unit A1</strong>
-                                                <span class="item-sku">SKU: AUR-001</span>
-                                            </div>
-                                            <span class="stock-badge in-stock">45 U.</span>
-                                        </div>
-                                        <div class="stock-item-row">
-                                            <div class="item-info">
-                                                <strong class="item-name">Eclipse Table Lamp</strong>
-                                                <span class="item-sku">SKU: ECL-492</span>
-                                            </div>
-                                            <span class="stock-badge low-stock">8 U.</span>
-                                        </div>
-                                        <div class="stock-item-row">
-                                            <div class="item-info">
-                                                <strong class="item-name">Horizon Oak Desk</strong>
-                                                <span class="item-sku">SKU: HRZ-105</span>
-                                            </div>
-                                            <span class="stock-badge out-stock">Agotado</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- Interactive Floating Scan Action in Phone -->
-                                    <button class="phone-fab-scan" id="phoneFabScan">
-                                        <i class="fa-solid fa-expand"></i>
-                                        <span>Escanear Ítem</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="phone-shadow"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FUNCIONALIDADES (Grid Minimalista) -->
-        <section id="funcionalidades" class="features-section section-padding">
-            <div class="container">
-                <div class="section-title reveal">
-                    <span class="section-label">Características</span>
-                    <h2>Tecnología Avanzada para Tu Logística</h2>
-                    <p>Diseñada con los más altos estándares de rendimiento para ofrecerte una gestión de inventarios fluida y sin fricciones.</p>
-                </div>
-
-                <div class="features-grid">
-                    <!-- Card 1 -->
-                    <div class="minimal-card reveal slide-up delay-1">
-                        <div class="card-icon-wrapper">
-                            <i class="fa-duotone fa-solid fa-qrcode"></i>
-                        </div>
-                        <h3>Escaneo de códigos</h3>
-                        <p>Escanea códigos de barras y códigos QR en milisegundos usando la cámara nativa de tu dispositivo iOS o Android. Sin necesidad de hardware externo.</p>
-                        <div class="card-arrow"><i class="fa-solid fa-arrow-right-long"></i></div>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="minimal-card reveal slide-up delay-2">
-                        <div class="card-icon-wrapper">
-                            <i class="fa-duotone fa-solid fa-boxes-stacked"></i>
-                        </div>
-                        <h3>Gestión Multibodega</h3>
-                        <p>Sincroniza y monitorea el stock de múltiples almacenes, bodegas o tiendas físicas en tiempo real. Traspasos de mercancía transparentes con un toque.</p>
-                        <div class="card-arrow"><i class="fa-solid fa-arrow-right-long"></i></div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="minimal-card reveal slide-up delay-3">
-                        <div class="card-icon-wrapper">
-                            <i class="fa-duotone fa-solid fa-chart-line"></i>
-                        </div>
-                        <h3>Reportes en Tiempo Real</h3>
-                        <p>Genera informes de inventario avanzados, valuaciones automáticas y alertas tempranas de stock mínimo. Exporta datos en CSV o PDF al instante.</p>
-                        <div class="card-arrow"><i class="fa-solid fa-arrow-right-long"></i></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN DE ESCANEO (Layout Bleed) -->
-        <section id="escanear" class="bleed-section">
-            <div class="bleed-container">
-                <!-- Half Image (Left on Desktop) -->
-                <div class="bleed-image-side reveal slide-left">
-                    <img src="assets/scanning_mockup.png" alt="Persona escaneando código de barras con iPhone en almacén de diseño">
-                    <div class="image-gradient-overlay"></div>
-                </div>
-
-                <!-- Half Text (Right on Desktop) -->
-                <div class="bleed-text-side reveal slide-right">
-                    <span class="section-label">Precisión Quirúrgica</span>
-                    <h2>Velocidad de Escaneo Sin Precedentes</h2>
-                    <p>Nuestra tecnología de reconocimiento óptico de caracteres (OCR) y lectura de matrices decodifica cualquier etiqueta física al instante, incluso en condiciones de baja iluminación o códigos desgastados.</p>
-                    
-                    <div class="metric-list">
-                        <div class="metric-item">
-                            <span class="metric-number">0.12s</span>
-                            <span class="metric-label">Tiempo de escaneo promedio</span>
-                        </div>
-                        <div class="metric-item">
-                            <span class="metric-number">99.9%</span>
-                            <span class="metric-label">Tasa de precisión del lector</span>
-                        </div>
-                    </div>
-
-                    <a href="#precios" class="btn btn-outline">Probar el lector gratis</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- TABLA DE PLANES (Precios) -->
-        <section id="precios" class="pricing-section section-padding">
-            <div class="container">
-                <div class="section-title reveal">
-                    <span class="section-label">Planes de suscripción</span>
-                    <h2>Tarifas Transparentes, Sin Sorpresas</h2>
-                    <p>Elige el plan ideal para escalar tu negocio. Todos los planes incluyen actualizaciones de software y soporte continuo.</p>
-                </div>
-
-                <div class="pricing-grid">
-                    <!-- Plan 1: Free -->
-                    <div class="pricing-card reveal slide-up delay-1">
-                        <div class="pricing-header">
-                            <h3>Plan Inicial</h3>
-                            <p class="plan-desc">Para profesionales y pequeños emprendedores.</p>
-                            <div class="price-wrapper">
-                                <span class="price-currency">$</span>
-                                <span class="price-number">0</span>
-                                <span class="price-period">/ mes</span>
-                            </div>
-                        </div>
-                        <ul class="plan-features">
-                            <li><i class="fa-solid fa-check"></i> Hasta 100 productos</li>
-                            <li><i class="fa-solid fa-check"></i> 1 Bodega</li>
-                            <li><i class="fa-solid fa-check"></i> Escaneo QR estándar</li>
-                            <li class="disabled"><i class="fa-solid fa-xmark"></i> Historial ilimitado</li>
-                            <li class="disabled"><i class="fa-solid fa-xmark"></i> Soporte prioritario</li>
-                        </ul>
-                        <button class="btn btn-outline btn-block select-plan-btn" data-plan="Gratuito">Comenzar Gratis</button>
-                    </div>
-
-                    <!-- Plan 2: Pro (Featured with subtle glow) -->
-                    <div class="pricing-card card-pro reveal slide-up delay-2">
-                        <div class="pro-badge">Más popular</div>
-                        <div class="pricing-header">
-                            <h3>Plan Pro</h3>
-                            <p class="plan-desc">Para empresas en crecimiento y tiendas activas.</p>
-                            <div class="price-wrapper">
-                                <span class="price-currency">$</span>
-                                <span class="price-number" id="proPriceValue">29</span>
-                                <span class="price-period">/ mes</span>
-                            </div>
-                        </div>
-                        <ul class="plan-features">
-                            <li><i class="fa-solid fa-check"></i> Productos ilimitados</li>
-                            <li><i class="fa-solid fa-check"></i> Hasta 5 bodegas simultáneas</li>
-                            <li><i class="fa-solid fa-check"></i> Escáner láser ultrarrápido</li>
-                            <li><i class="fa-solid fa-check"></i> Historial y auditorías completas</li>
-                            <li><i class="fa-solid fa-check"></i> Reportes automatizados en PDF</li>
-                        </ul>
-                        <button class="btn btn-primary btn-block select-plan-btn" data-plan="Pro">Prueba Gratis 14 Días</button>
-                    </div>
-
-                    <!-- Plan 3: Enterprise -->
-                    <div class="pricing-card reveal slide-up delay-3">
-                        <div class="pricing-header">
-                            <h3>Plan Enterprise</h3>
-                            <p class="plan-desc">Para operaciones complejas y grandes redes.</p>
-                            <div class="price-wrapper">
-                                <span class="price-currency">$</span>
-                                <span class="price-number">99</span>
-                                <span class="price-period">/ mes</span>
-                            </div>
-                        </div>
-                        <ul class="plan-features">
-                            <li><i class="fa-solid fa-check"></i> Productos ilimitados</li>
-                            <li><i class="fa-solid fa-check"></i> Bodegas ilimitadas</li>
-                            <li><i class="fa-solid fa-check"></i> API de integración ERP/CRM</li>
-                            <li><i class="fa-solid fa-check"></i> Gestor de cuenta dedicado</li>
-                            <li><i class="fa-solid fa-check"></i> Soporte 24/7 Premium</li>
-                        </ul>
-                        <button class="btn btn-outline btn-block select-plan-btn" data-plan="Enterprise">Contactar Ventas</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SUSCRIPTION/PAYMENTS SIMULATOR OVERLAY -->
-        <div class="simulator-modal-overlay" id="simModal">
-            <div class="simulator-modal">
-                <button class="close-modal-btn" id="closeModalBtn" aria-label="Cerrar modal"><i class="fa-solid fa-xmark"></i></button>
+                <h1>Gestión de Inventarios Multiplataforma.<br><span>Sencilla. Robusta. Impecable.</span></h1>
+                <p>Automatice el control de existencias, simplifique traspasos multi-bodega y audite flujos financieros desde cualquier terminal. Descargue e instale el software nativo optimizado.</p>
                 
-                <!-- Step 1: Form -->
-                <div class="modal-step active" id="modalStepForm">
-                    <h3>Simulación de Suscripción</h3>
-                    <p class="modal-desc">Completa los datos de pago para activar tu plan <strong id="selectedPlanName" class="text-sapphire">Pro</strong> simulado.</p>
-                    
-                    <form id="paymentForm">
-                        <div class="form-group-minimal">
-                            <label for="cardName">Titular de la Tarjeta</label>
-                            <input type="text" id="cardName" placeholder="Ej: Sofía Ruiz" required>
+                <!-- Direct Downloads Zone in Hero -->
+                <div class="download-zone" id="descargas">
+                    <!-- Download Windows -->
+                    <button class="btn-download dl-trigger" data-file="Bolsillo_v3.2_Setup.exe" data-size="48 MB" data-platform="Windows">
+                        <i class="fa-brands fa-windows"></i>
+                        <div class="btn-download-text">
+                            <span>Descargar para Windows</span>
+                            <strong>BolsilloPro.exe</strong>
                         </div>
-                        
-                        <div class="form-row-minimal">
-                            <div class="form-group-minimal flex-2">
-                                <label for="cardNumber">Número de Tarjeta</label>
-                                <div class="input-icon-wrapper">
-                                    <i class="fa-solid fa-credit-card"></i>
-                                    <input type="text" id="cardNumber" placeholder="•••• •••• •••• 4242" required maxlength="19">
-                                </div>
-                            </div>
-                            <div class="form-group-minimal flex-1">
-                                <label for="cardExpiry">Expira</label>
-                                <input type="text" id="cardExpiry" placeholder="MM/AA" required maxlength="5">
-                            </div>
+                    </button>
+                    <!-- Download Android -->
+                    <button class="btn-download dl-trigger" data-file="Bolsillo_v3.2_Release.apk" data-size="24 MB" data-platform="Android">
+                        <i class="fa-brands fa-android"></i>
+                        <div class="btn-download-text">
+                            <span>Descargar para Android</span>
+                            <strong>BolsilloPro.apk</strong>
                         </div>
-
-                        <div class="form-group-minimal">
-                            <label for="billingAmount">Monto a Facturar</label>
-                            <div class="billing-amount-box">
-                                <span id="billingPlanText">Plan Pro (Mensual)</span>
-                                <strong id="billingPlanPrice">$29.00</strong>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-block" id="btnConfirmPayment">
-                            <span>Suscribirse Ahora</span>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                    </form>
-                </div>
-
-                <!-- Step 2: Processing -->
-                <div class="modal-step" id="modalStepProcessing">
-                    <div class="scan-scanner-effect">
-                        <div class="laser-line"></div>
-                        <i class="fa-solid fa-shield-halved security-icon-loading"></i>
-                    </div>
-                    <h4>Cifrando Datos del Cliente...</h4>
-                    <p>Procesando cobro seguro SSL de 256 bits.</p>
-                </div>
-
-                <!-- Step 3: Success -->
-                <div class="modal-step" id="modalStepSuccess">
-                    <div class="success-seal">
-                        <i class="fa-solid fa-circle-check"></i>
-                    </div>
-                    <h4 class="text-sapphire">¡Suscripción Activada!</h4>
-                    <p>Has activado exitosamente el plan <strong id="successPlanName" class="text-white">Pro</strong>. La simulación de cobro ha finalizado.</p>
-                    
-                    <div class="receipt-minimal">
-                        <div class="receipt-row-minimal">
-                            <span>ID de Cobro:</span>
-                            <strong id="successTxId">#INV-9843</strong>
-                        </div>
-                        <div class="receipt-row-minimal">
-                            <span>Cliente:</span>
-                            <strong id="successClient">Sofía Ruiz</strong>
-                        </div>
-                        <div class="receipt-row-minimal">
-                            <span>Precio Plan:</span>
-                            <strong id="successPrice">$29.00/mes</strong>
-                        </div>
-                    </div>
-
-                    <button class="btn btn-outline btn-block" id="btnDonePayment">Aceptar</button>
+                    </button>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- CAPACIDADES BENTO GRID (12 TARJETAS EXTENSAS) -->
+        <section id="beneficios" class="section-padding">
+            <div class="container">
+                <div class="section-header reveal slide-up">
+                    <span class="section-subtitle">Capacidades</span>
+                    <h2>Diseñada para el Rendimiento Masivo</h2>
+                    <p>Una colección de herramientas premium de nivel de ingeniería para el control exhaustivo de inventarios.</p>
+                </div>
+
+                <div class="bento-grid">
+                    <!-- Tarjeta 1: Importación Inteligente -->
+                    <div class="bento-card col-span-2-lg reveal slide-up delay-1">
+                        <div class="bento-icon"><i class="fa-solid fa-file-import"></i></div>
+                        <h3>Importación Inteligente de Inventarios</h3>
+                        <p>Migra bases de datos completas, catálogos masivos o inventarios obsoletos desde archivos Excel, CSV o XML en cuestión de segundos. El sistema cuenta con un mapeo inteligente de columnas que reconoce automáticamente nombres de productos, SKUs, costos y niveles de stock, eliminando por completo la necesidad de volver a digitar la información de tu negocio de forma manual.</p>
+                    </div>
+
+                    <!-- Tarjeta 2: Arquitectura Multi-Bodega -->
+                    <div class="bento-card reveal slide-up delay-2">
+                        <div class="bento-icon"><i class="fa-solid fa-network-wired"></i></div>
+                        <h3>Arquitectura Multi-Bodega y Sedes Jerárquicas</h3>
+                        <p>Controla, segrega y supervisa múltiples almacenes, depósitos físicos, tiendas de retail o inventarios móviles desde una sola cuenta maestra. Permite realizar transferencias de mercancía internas entre bodegas rastreables en tiempo real, manteniendo balances independientes y consolidados de forma simultánea.</p>
+                    </div>
+
+                    <!-- Tarjeta 3: Sincronizacion -->
+                    <div class="bento-card reveal slide-up delay-3">
+                        <div class="bento-badge">Supabase Cloud</div>
+                        <div class="bento-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                        <h3>Sincronización Híbrida en Tiempo Real</h3>
+                        <p>Conectividad instantánea e bidireccional. Cada venta registrada, código escanero o actualización de existencias realizada desde la aplicación móvil de Android (.apk) en el campo, se replica e impacta al milisegundo en la interfaz de la aplicación de escritorio de Windows (.exe) en la oficina central, garantizando datos unificados.</p>
+                    </div>
+
+                    <!-- Tarjeta 4: Escaner -->
+                    <div class="bento-card reveal slide-up delay-4">
+                        <div class="bento-icon"><i class="fa-solid fa-expand"></i></div>
+                        <h3>Escáner Láser de Campo Optimizado</h3>
+                        <p>Transforma la cámara de cualquier dispositivo Android en un lector de códigos de barras y QR de nivel industrial. Desarrollado con algoritmos de enfoque rápido para procesar códigos de barras (EAN-13, UPC, Code 128) en milisegundos, funcionando impecablemente incluso en baja iluminación o etiquetas dañadas.</p>
+                    </div>
+
+                    <!-- Tarjeta 5: Log Forense -->
+                    <div class="bento-card reveal slide-up delay-1">
+                        <div class="bento-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                        <h3>Historial de Auditoría Inmutable (Log Forense)</h3>
+                        <p>Blindaje total contra el robo hormiga y los desajustes injustificados. Cada movimiento dentro del sistema genera una traza digital permanente e imborrable que registra con precisión quirúrgica el usuario responsable, la acción exacta efectuada, la fecha, la hora exacta y el identificador del dispositivo.</p>
+                    </div>
+
+                    <!-- Tarjeta 6: Valoracion Contable -->
+                    <div class="bento-card col-span-2-lg reveal slide-up delay-2">
+                        <div class="bento-icon"><i class="fa-solid fa-calculator"></i></div>
+                        <h3>Fórmulas de Valoración Contable Automatizadas</h3>
+                        <p>Conozca el valor financiero neto de sus activos de manera inmediata. El software calcula automáticamente los costos basándose en metodologías contables reconocidas como PEPS (Primero en Entrar, Primero en Salir / FIFO), UEPS (LIFO) o el método de Costo Promedio Ponderado, adaptándose a las necesidades fiscales de su empresa.</p>
+                    </div>
+
+                    <!-- Tarjeta 7: Stock Critico -->
+                    <div class="bento-card reveal slide-up delay-3">
+                        <div class="bento-icon"><i class="fa-solid fa-bell"></i></div>
+                        <h3>Alertas de Stock Crítico y Gestión de Mermas</h3>
+                        <p>Sistema de notificaciones predictivas e inteligentes. Defina mínimos de seguridad por cada artículo y reciba alertas push o correos automáticos antes de que ocurra una ruptura de stock. Además, incluye un módulo dedicado para dar de baja mercancía por daño, vencimiento o pérdida, justificando el balance contable.</p>
+                    </div>
+
+                    <!-- Tarjeta 8: Reportes -->
+                    <div class="bento-card reveal slide-up delay-4">
+                        <div class="bento-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                        <h3>Generador de Reportes Ejecutivos Avanzados</h3>
+                        <p>Diseñe y exporte informes completos en formatos profesionales PDF, hojas de cálculo Excel o archivos CSV con un solo toque. Ideal para presentar balances en auditorías internas, declaraciones fiscales ante entidades reguladoras o análisis financieros minuciosos para la junta directiva.</p>
+                    </div>
+
+                    <!-- Tarjeta 9: RBAC Granular -->
+                    <div class="bento-card reveal slide-up delay-1">
+                        <div class="bento-icon"><i class="fa-solid fa-user-gear"></i></div>
+                        <h3>Control de Acceso por Roles (RBAC Granular)</h3>
+                        <p>Gestione la seguridad interna asignando perfiles de usuario estrictos. Defina con precisión milimétrica a qué pantallas, datos o acciones tiene acceso cada empleado: configure roles específicos para Administradores Generales, Gerentes de Logística, Cajeros de Punto de Venta u Operarios de Almacén.</p>
+                    </div>
+
+                    <!-- Tarjeta 10: Backups -->
+                    <div class="bento-card reveal slide-up delay-2">
+                        <div class="bento-icon"><i class="fa-solid fa-server"></i></div>
+                        <h3>Respaldos Automatizados Georredundantes</h3>
+                        <p>Cero riesgos de pérdida de datos por fallas de hardware, caídas de energía o extravío de dispositivos. El sistema ejecuta copias de seguridad automáticas y encriptadas cada 24 horas, almacenándolas en servidores en la nube altamente seguros con redundancia geográfica para garantizar la continuidad de su negocio.</p>
+                    </div>
+
+                    <!-- Tarjeta 11: POS y Caja -->
+                    <div class="bento-card col-span-2-lg reveal slide-up delay-3">
+                        <div class="bento-icon"><i class="fa-solid fa-cash-register"></i></div>
+                        <h3>Módulo POS de Punto de Venta y Caja</h3>
+                        <p>No solo controle su stock, también gestione sus ingresos de forma nativa. Incluye un módulo integrado para registrar transacciones de venta directa, procesar abonos de clientes, gestionar cuentas por cobrar, calcular el flujo de caja diario y emitir recibos de pago digitales directamente desde su bolsillo.</p>
+                    </div>
+
+                    <!-- Tarjeta 12: Offline-First -->
+                    <div class="bento-card reveal slide-up delay-4">
+                        <div class="bento-icon"><i class="fa-solid fa-wifi-slash"></i></div>
+                        <h3>Arquitectura Offline-First con Sincronización</h3>
+                        <p>Trabaje sin interrupciones incluso en zonas rurales, sótanos o áreas sin cobertura de red. La aplicación retiene de forma segura todas las transacciones, modificaciones y escaneos en la base de datos local del dispositivo y, al detectar una conexión a internet estable, sincroniza todo automáticamente con la nube.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE SEGURIDAD -->
+        <section id="seguridad" class="section-padding" style="background-color: rgba(30, 41, 59, 0.03);">
+            <div class="container security-container">
+                <div class="security-visual reveal slide-up">
+                    <div class="security-pulse"></div>
+                    <i class="fa-solid fa-fingerprint security-shield"></i>
+                </div>
+                
+                <div class="security-content reveal slide-up delay-2">
+                    <span class="section-subtitle">Blindaje de Datos</span>
+                    <h2>Protección Criptográfica Certificada</h2>
+                    <p>En Bolsillo Pro entendemos el valor estratégico de su inventario. Por ello, toda la información se guarda localmente en el dispositivo con encriptación simétrica AES-256 bits. Al sincronizarse con la nube, viaja protegida por conexiones HTTPS/TLS 1.3 con rotación constante de tokens y validación de firma digital.</p>
+                    <button class="btn btn-outline" style="pointer-events: none;"><i class="fa-solid fa-user-shield"></i> Infraestructura de Grado Bancario</button>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- FLOATING DOCK (iOS Dock Style) -->
-    <div class="floating-dock-wrapper">
-        <nav class="floating-dock" aria-label="Bandeja de Navegación Flotante">
-            <a href="#precios" class="dock-item" id="dockBtnPayments" title="Pagos / Planes">
+    <!-- FLOATING DOCK INFERIOR (iOS Style Bottom Tray) -->
+    <div class="dock-wrapper">
+        <nav class="dock">
+            <a href="#planes" class="dock-btn" onclick="alert('Módulo de Pagos Corporativos Simulado.'); return false;">
                 <i class="fa-solid fa-credit-card"></i>
-                <span class="dock-label">Pagos</span>
+                <span>Pagos</span>
             </a>
-            <a href="#precios" class="dock-item" id="dockBtnSubscription" title="Suscripción">
+            <a href="#beneficios" class="dock-btn">
                 <i class="fa-solid fa-gem"></i>
-                <span class="dock-label">Suscripción</span>
+                <span>Suscripción</span>
             </a>
-            <a href="#escanear" class="dock-item" id="dockBtnDemo" title="Demostración">
-                <i class="fa-solid fa-circle-play"></i>
-                <span class="dock-label">Demo</span>
-            </a>
-            <a href="#inicio" class="dock-item active" id="dockBtnTop" title="Inicio / Arriba">
-                <i class="fa-solid fa-arrow-up"></i>
-                <span class="dock-label">Inicio</span>
+            <button class="dock-btn auth-trigger" data-tab="login">
+                <i class="fa-solid fa-key"></i>
+                <span>Acceso</span>
+            </button>
+            <a href="#inicio" class="dock-btn active">
+                <i class="fa-solid fa-house"></i>
+                <span>Inicio</span>
             </a>
         </nav>
     </div>
 
-    <!-- Script -->
-    <script src="script.js"></script>
+    <!-- CENTRALIZED AUTHENTICATION MODAL -->
+    <div class="auth-modal-overlay" id="authModal">
+        <div class="auth-modal">
+            <button class="close-auth-btn" id="closeAuthBtn" aria-label="Cerrar ventana"><i class="fa-solid fa-xmark"></i></button>
+            
+            <!-- Tabs headers -->
+            <div class="auth-tabs">
+                <button class="auth-tab-btn active" id="tabBtnLogin" data-target="login">Iniciar Sesión</button>
+                <button class="auth-tab-btn" id="tabBtnRegister" data-target="register">Registrarse</button>
+            </div>
+
+            <!-- LOGIN FORM -->
+            <div class="form-panel active" id="panelLogin">
+                <p>Ingresa las credenciales registradas de tu empresa.</p>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Correo Corporativo</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="loginEmail" placeholder="ejemplo@empresa.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Contraseña</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="loginPassword" placeholder="••••••••" required>
+                        </div>
+                    </div>
+                    <span class="status-message" id="loginStatus"></span>
+                    <button type="submit" class="btn btn-primary btn-block">Ingresar al Sistema</button>
+                </form>
+            </div>
+
+            <!-- REGISTER FORM -->
+            <div class="form-panel" id="panelRegister">
+                <p>Crea tu cuenta de empresa para sincronizar Windows y Android.</p>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="regCompany">Nombre de la Empresa</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-building"></i>
+                            <input type="text" id="regCompany" placeholder="Logística S.A." required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail">Correo Corporativo</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="regEmail" placeholder="admin@empresa.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPassword">Contraseña</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="regPassword" placeholder="Mínimo 8 caracteres" required minlength="8">
+                        </div>
+                    </div>
+                    <span class="status-message" id="registerStatus"></span>
+                    <button type="submit" class="btn btn-primary btn-block">Crear Cuenta Ejecutiva</button>
+                </form>
+            </div>
+
+            <!-- LOADING / SYNC SCREEN OVERLAY inside Modal -->
+            <div class="auth-loader-screen" id="authLoaderScreen">
+                <div class="auth-loader-content" id="loaderState" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <div class="spinner-circle"></div>
+                    <h4 id="loaderTitle">Verificando Cuenta...</h4>
+                    <p id="loaderDesc">Estableciendo conexión TLS segura con Supabase Cloud.</p>
+                </div>
+                <div class="auth-loader-content" id="successState" style="display: none; flex-direction: column; align-items: center; text-align: center;">
+                    <div class="success-seal">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h4 style="color: var(--success-color);">¡Autenticación Exitosa!</h4>
+                    <p>Las credenciales han sido verificadas en la base de datos central. Ya puedes conectarte en las apps de Windows y Android.</p>
+                    <button class="btn btn-outline" id="btnResetAuth" style="margin-top: 24px; padding: 8px 16px; font-size: 0.8rem;">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DOWNLOAD MANAGER TOAST -->
+    <div class="download-toast" id="downloadToast">
+        <div class="download-toast-header">
+            <i class="fa-solid fa-circle-notch fa-spin" id="toastIcon"></i>
+            <span id="toastFilename">BolsilloPro.exe</span>
+        </div>
+        <div class="download-progress-bar">
+            <div class="download-progress-fill" id="toastProgressFill"></div>
+        </div>
+        <div class="download-toast-footer">
+            <span id="toastProgressText">0%</span>
+            <span id="toastSpeedText">8.5 MB/s</span>
+        </div>
+    </div>
+
+    <!-- Modular Script Link -->
+    <script src="js/script.js"></script>
 </body>
 </html>

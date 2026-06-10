@@ -41,3 +41,6 @@ Para previsualizar y probar la landing page localmente utilizando el servidor na
 # Iniciar el servidor estático
 node server.js
 ```
+
+El sitio estará disponible por defecto en:
+👉 **http://127.0.0.1:8083**
